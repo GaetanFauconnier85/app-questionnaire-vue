@@ -1,9 +1,6 @@
 <template>
   <QuizzComponent>
-    <div class="quizz">
       <img alt="Vue logo" src="../assets/logo.png">
-      <QuizzComponent msg="ntm"/>
-    </div>
   </QuizzComponent>
 </template>
 
@@ -12,7 +9,7 @@
 import QuizzComponent from '@/components/QuizzComponent.vue'
 
 export default {
-  name: 'quizz',
+  name: 'questionnaire',
   components: {
     QuizzComponent
   }

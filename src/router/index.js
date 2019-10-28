@@ -12,8 +12,8 @@ const routes = [
     component: Login
   },
   {
-    path: '/quizz/:idUser',
-    name: 'quizz',
+    path: '/questionnaire/:idUser',
+    name: 'questionnaire',
     component: Quizz
   }
 ]

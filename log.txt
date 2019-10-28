@@ -853,3 +853,13 @@
 [Mon, 28 Oct 2019 09:00:16 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /epsi/_all_docs?startkey=%22_design%2F%22&endkey=%22_design0%22&include_docs=true&limit=501 200
 [Mon, 28 Oct 2019 09:00:16 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /epsi/_all_docs?include_docs=true&conflicts=true&limit=21 200
 [Mon, 28 Oct 2019 09:00:16 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /epsi/_all_docs?startkey=%22%22&endkey=%22%E9%A6%99%22&limit=30&_=1572253216277 200
+[Mon, 28 Oct 2019 15:52:12 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Mon, 28 Oct 2019 15:52:12 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Mon, 28 Oct 2019 15:53:31 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Mon, 28 Oct 2019 15:53:31 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Mon, 28 Oct 2019 15:53:45 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5985/
+[Mon, 28 Oct 2019 15:53:45 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5985/_utils for the Fauxton UI.
+[Mon, 28 Oct 2019 15:55:13 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Mon, 28 Oct 2019 15:55:13 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.
+[Mon, 28 Oct 2019 15:57:22 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:5984/
+[Mon, 28 Oct 2019 15:57:22 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:5984/_utils for the Fauxton UI.

@@ -54,7 +54,7 @@ export default {
   methods: {
     onSubmit (evt) {
       evt.preventDefault()
-      this.$router.push({ name: 'quizz', params: { idUser: this._id } })
+      this.$router.push({ name: 'questionnaire', params: { idUser: this._id } })
     },
     onReset (evt) {
       evt.preventDefault()
@@ -75,10 +75,6 @@ export default {
         firstName: this.form.lastName,
         lastName: this.form.lastName,
         compagnyName: this.form.compagnyName
-      })
-
-      this.$pouchdb.changes().on('change', function () {
-        console.log('Ch-Ch-Changes')
       })
 
       this.$pouchdb.replicate.to('http://127.0.0.1:5984/epsi')
