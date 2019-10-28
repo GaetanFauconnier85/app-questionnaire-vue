@@ -28,4 +28,6 @@ init project and bdd
 done : init project and bdd 
 
 28/10/2019
-add question and login component / update road
+- [ ] add question
+- [ ] add login component 
+- [ ] update road

@@ -37,10 +37,13 @@
 </template>
 
 <script>
+const shortid = require('shortid')
+
 export default {
   data () {
     return {
       form: {
+        _id: '',
         firstName: '',
         lastName: '',
         compagnyName: ''
@@ -51,7 +54,7 @@ export default {
   methods: {
     onSubmit (evt) {
       evt.preventDefault()
-      this.$router.push('/about')
+      this.$router.push({ name: 'quizz', params: { idUser: this._id } })
     },
     onReset (evt) {
       evt.preventDefault()
@@ -66,8 +69,9 @@ export default {
       })
     },
     insertOnPoutchDb () {
+      this._id = shortid.generate()
       this.$pouchdb.put({
-        _id: this.form.compagnyName,
+        _id: this._id,
         firstName: this.form.lastName,
         lastName: this.form.lastName,
         compagnyName: this.form.compagnyName
@@ -81,5 +85,4 @@ export default {
     }
   }
 }
-
 </script>
