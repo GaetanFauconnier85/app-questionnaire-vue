@@ -22,3 +22,8 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+23/10/2019
+init project and bdd
+done : init project and bdd
+
