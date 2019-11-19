@@ -1,0 +1,133 @@
+{"questions": [
+{
+"title": "Au Moyen-Âge, comment appelait-on les villages fortifiés ?",
+"result": [
+"Tour",
+"Bastide",
+"Chateau fort",
+"Rempart"
+],
+"response": [
+"Bastide"
+],
+"id": 1
+},
+{
+"title": "Dans quel film un couple en croisière va-t-il recueillir un naufragé qui va les terrifier ?",
+"result": [
+"Calme blanc",
+"Tempete en mer",
+"Le naufragé",
+"Les disparus"
+],
+"response": [
+"Le naufragé"
+],
+"id": 2
+},
+{
+"title": "Quel acteur français avait le premier rôle dans le film de Luchino Visconti \"Le Guépard\" ?",
+"result": [
+"JP Belmondo",
+"C Brasseur",
+"J Gabin",
+"A Delon"
+],
+"response": [
+"A Delon"
+],
+"id": 3
+},
+{
+"title": "Quel film à succès a réuni sur les écrans Sean Connery et Christophe Lambert ?",
+"result": [
+"Highlander",
+"Greystoke",
+"Subway",
+"Mad Max"
+],
+"response": [
+"Highlander"
+],
+"id": 4
+},
+{
+"title": "Comment appelle-t-on le fruit du plaqueminier ?",
+"result": [
+"Kakou",
+"Kacha",
+"Kaki",
+"Kali"
+],
+"response": [
+"Kaki"
+],
+"id": 5
+},
+{
+"title": "Qui était le compagnon de saint Paul ?",
+"result": [
+"Saint-Matthieu",
+"Saint-Jean",
+"Saint-Luc",
+"Saint-Marc"
+],
+"response": [
+"Saint-Luc"
+],
+"id": 6
+},
+{
+"title": "Dans quel film John Travolta incarne-t-il un ange tombé du ciel ?",
+"result": [
+"Michael",
+"Johnny",
+"Jerry",
+"Sam"
+],
+"response": [
+"Michael"
+],
+"id": 7
+},
+{
+"title": "Quel titre de noblesse est immédiatement inférieur à celui de comte ?",
+"result": [
+"Archiduc",
+"Marquis",
+"Vicomte",
+"Duc"
+],
+"response": [
+"Vicomte"
+],
+"id": 8
+},
+{
+"title": "De quelle série de six films un champion de boxe est-il la vedette ?",
+"result": [
+"Ritchie",
+"Rocky",
+"Rambo",
+"Randy"
+],
+"response": [
+"Rocky"
+],
+"id": 9
+},
+{
+"title": "Quelle est la capitale de la Nouvelle-Zélande ?",
+"result": [
+"Dublin",
+"Auckland",
+"Wellington",
+"Sydney"
+],
+"response": [
+"Wellington"
+],
+"id": 10
+}
+]
+}

@@ -1,85 +1,102 @@
 <template>
   <div>
     <div>
-      <div v-for="question in questionnaire" v-bind:key="question">
-        <div v-if="question.id === currentQuestion">
+      <div v-for="question in gfQuestionnaire" v-bind:key="question">
+        <div v-if="question.id === gfCurrentQuestion">
           <h3>{{question.title}}</h3>
           <div v-for="response in question.result" v-bind:key="response">
-            <input class="form-check-input" type="checkbox" v-model="checkedNames" v-bind:value="response" id="defaultCheck1">
+            <input class="form-check-input" type="checkbox" v-model="gfCheckedNames" v-bind:value="response"
+                   id="defaultCheck1">
             <label class="form-check-label" for="defaultCheck1">
               {{response}}
             </label>
           </div>
-          <button v-on:click="onSubmit" type="submit">Valider</button>
+          <b-button v-on:click="gfOnSubmit" type="submit">Valider</b-button>
         </div>
-      </div><span>Noms cochés : {{ checkedNames }}</span>
+      </div>
+
     </div>
+
   </div>
 
 </template>
 
 <script>
-const shortid = require('shortid')
+import gfQuestionJson from '../questions'
 
 export default {
   data () {
     return {
-      checkedNames: [],
-      currentQuestion: null,
-      idUser: '',
-      questionnaire: '',
-      questionsList: [],
-      index: 0
+      gfCheckedNames: [],
+      gfCurrentQuestion: null,
+      gfIdUser: '',
+      gfQuestionnaire: '',
+      gfQuestionsList: [],
+      gfIndex: 1,
+      gfScore: 0
     }
   },
   created: function () {
-    this.getDoc()
-    this.getQuestion()
-    this.getQuestionsList()
+    this.gfGetQuestion()
+    this.gfGetQuestionsList()
   },
   methods: {
-    onSubmit (evt) {
+    gfOnSubmit (evt) {
+      // methode qui permet de vérifier le(s) choix de l'utilisateurs et de passer a la question suivante
       evt.preventDefault()
-      console.log(this.checkedNames)
-      var d = new Date()
-      console.log(shortid.generate() + '_' + d.getDate() + d.getMonth() + d.getHours())
-      this.$pouchdb.put({
-        _id: shortid.generate() + '_' + d.getDate(),
-        checkbox: this.checkedNames
-      })
-      this.nextQuestion()
-    },
-    getDoc () {
-      this.$pouchdb.get(this.$route.params.idUser).then((doc) => {
-        this.testos = doc
-      }).catch((err) => {
-        console.log(err)
-      })
-    },
-    getQuestionsList () {
-      while (this.questionsList.length < 10) {
-        var oui = true
-        var r = Math.floor(Math.random() * 10) + 1
-        for (var i = 0; i < 9; i++) {
-          if (this.questionsList[i] === r) {
-            oui = false
+
+      // on vérifie si l'utilisateur a coché une réponse
+      if (JSON.stringify(this.gfCheckedNames) === JSON.stringify([])) {
+        // si non on ne fais rien
+      } else {
+        // pour le nombre de questions totals
+        for (var i = 0; i < this.gfQuestionnaire.length; i++) {
+          // on regarde la question dont l'id correspond a la question courante
+          if (this.gfQuestionnaire[i].id === this.gfCurrentQuestion) {
+            // si la reponse correspond a ce qu'a donné l'utilisateur alors on augmente le score de 1
+            if (JSON.stringify(this.gfQuestionnaire[i].response) === JSON.stringify(this.gfCheckedNames)) {
+              this.gfScore += 1
+            }
           }
         }
-        if (oui === true) {
-          this.questionsList.push(r)
+
+        // on reinitialise les case a cocher
+        this.gfCheckedNames = []
+
+        // si on a atteint la dixieme question alors on est redirigé vers la page de resultat
+        if (this.gfIndex >= 10) {
+          this.$router.push({ name: 'result', params: { score: this.gfScore } })
+        } else { // sinon on augmente l'index
+          this.gfIndex += 1
+        }
+        // permet de passer a la question suivante
+        this.gfNextQuestion()
+      }
+    },
+    gfGetQuestionsList () {
+      // permet d'organiser les questions dans un ordre aléatoire
+      while (this.gfQuestionsList.length < 10) {
+        var gfVerify = true
+        var r = Math.floor(Math.random() * 10) + 1
+        for (var i = 0; i < 9; i++) {
+          if (this.gfQuestionsList[i] === r) {
+            gfVerify = false
+          }
+        }
+        if (gfVerify === true) {
+          this.gfQuestionsList.push(r)
         }
       }
-      this.currentQuestion = this.questionsList[0]
+
+      this.gfCurrentQuestion = this.gfQuestionsList[0]
     },
-    nextQuestion () {
-      this.currentQuestion = this.questionsList[this.questionsList.indexOf(this.currentQuestion) + 1]
+    gfNextQuestion () {
+      // permet de recuperer la prochaine question
+      this.gfCurrentQuestion = this.gfQuestionsList[this.gfQuestionsList.indexOf(this.gfCurrentQuestion) + 1]
     },
-    getQuestion () {
-      this.$pouchdb.get('8a7903c0-bcdd-460b-a91b-edc508abaf26').then((doc) => {
-        this.questionnaire = doc.questions
-      }).catch((err) => {
-        console.log(err)
-      })
+    gfGetQuestion () {
+      // on recupere la liste des questions
+      this.gfQuestionnaire = gfQuestionJson.questions
     }
   }
 }
