@@ -14,6 +14,6 @@ https://gaetanfauconnier85.github.io/#/
 - [x] update road
 
 19/11/2019
-- [ ] improve style
+- [x] improve style
 - [ ] admin part
-- [ ] register score
+- [x] score
