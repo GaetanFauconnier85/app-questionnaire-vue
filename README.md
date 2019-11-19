@@ -1,33 +1,19 @@
 # app-questionnaire-vue
 
-## Project setup
-```
-npm install
-```
+### Link github.io
+https://gaetanfauconnier85.github.io/#/
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Objectives
 
 23/10/2019
-init project and bdd 
-done : init project and bdd 
+- [x] init project and bdd 
 
 28/10/2019
-- [ ] add question
-- [ ] add login component 
-- [ ] update road
+- [x] add question
+- [x] add login component 
+- [x] update road
+
+19/11/2019
+- [ ] improve style
+- [ ] admin part
+- [ ] register score
